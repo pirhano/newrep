@@ -1,0 +1,27 @@
+/* Rhomija — rendez-vous (admin). */
+.rb-badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; line-height: 1.7; background: #f0f0f1; color: #3c434a; }
+.rb-badge--pending { background: #fcf0d4; color: #7a5300; }
+.rb-badge--confirmed { background: #d9f2ec; color: #0b6157; }
+.rb-badge--done { background: #e3ecf8; color: #164a80; }
+.rb-badge--no_show { background: #f6e1e1; color: #8a2424; }
+.rb-badge--cancelled { background: #ececec; color: #6b6b6b; text-decoration: line-through; }
+.rb-today, .rb-new { display: inline-block; margin-left: 4px; padding: 0 7px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1c6db5; color: #fff; vertical-align: middle; }
+.rb-new { background: #1fa39a; }
+.rb-msg { color: #646970; font-size: 12px; }
+.row-actions .rb-danger a, .row-actions a.rb-danger { color: #b32d2e; }
+.column-rb_when { width: 22%; }
+.column-rb_status { width: 11%; }
+.column-rb_received { width: 12%; }
+.rb-admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 18px; }
+.rb-admin-grid label { display: block; font-weight: 600; margin-bottom: 4px; }
+.rb-admin-grid input, .rb-admin-grid select, .rb-admin-grid textarea { width: 100%; max-width: none; }
+.rb-admin-full { grid-column: 1 / -1; }
+.rb-wide { width: 100%; text-align: center; }
+.button.rb-wa { background: #1fae5b; border-color: #1fae5b; }
+.button.rb-wa:hover, .button.rb-wa:focus { background: #178c49; border-color: #178c49; }
+.rb-dash { margin: 0; }
+.rb-dash li { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; padding: 8px 0; border-bottom: 1px solid #f0f0f1; margin: 0; }
+.rb-dash li span:not(.rb-badge) { color: #646970; }
+.rb-dash-alert { background: #fcf0d4; padding: 8px 12px; border-radius: 6px; font-weight: 600; }
+.post-type-rb_appointment #post-body-content { display: none; }
+.post-type-rb_appointment #minor-publishing-actions, .post-type-rb_appointment #misc-publishing-actions { display: none; }
