@@ -71,6 +71,34 @@ header, footer, contact page, booking e-mails and Google structured data.
 
 ---
 
+## Deployment log: live site, 21 October 2026
+
+Deployed to `https://lavender-chamois-170103.hostingersite.com` with the admin account:
+
+| Change | Before | After |
+| --- | --- | --- |
+| Plugin | none | **Rhomija — Prise de rendez-vous** 1.0.0 (active) |
+| Theme | Toothwise (still installed) | **Rhomija Dentaire** 1.0.0 |
+| Site title / tagline | "Rhoija Smile" / empty | "Cabinet Dentaire Dr Rhomija Nabil" / "Dentiste à Témara — soins, esthétique, implants et urgences" |
+| Home page | theme's latest-posts template | static page **Accueil**; posts page **Conseils dentaires** |
+| Time zone | UTC+0 | Africa/Casablanca |
+| Language | fr_FR | fr_FR (unchanged) |
+| Pages / articles / menus | none published | 16 pages, 3 articles, "Menu principal", "Pied de page" |
+| Privacy page | draft "Privacy Policy" | "Mentions légales & confidentialité" |
+| Site logo | old clip-art logo (media #19) | none: the theme shows its bundled new SVG logo |
+| Site icon | old cropped logo (media #20) | new tooth icon (media #74) |
+| Sample post "Hello world!" | published | moved to the trash (recoverable) |
+| LiteSpeed cache | — | purged |
+
+**To roll back:**
+1. Apparence → Thèmes → Toothwise → Activer.
+2. Optionally restore the old logo and icon in Personnaliser → Identité du site.
+3. Optionally put back the old title in Réglages → Général.
+
+Nothing was deleted, so the old theme, media and drafts are all still there.
+
+---
+
 ## Connecting the domain `dentiste-rhomija.ma`
 
 **Status on 21 October 2026:** the domain is registered, but its DNS is still at the registrar:
@@ -191,9 +219,7 @@ I wrote the copy from the existing site, the clinic photos and a public director
 - **Hostinger AI Builder (first site):** the login page is behind a Cloudflare bot check, so I couldn't open that project.
   The rebuild is based on the WordPress site, the clinic's own photos (from the media library) and its public listing.
   If you export or publish the AI-builder version, its content can be merged in.
-- **WordPress admin (second site):** the password provided for the new admin account was rejected, including on a retry on 21 October.
-  This usually happens when *Users → Profile → Set new password* was used but the profile wasn't saved (**Mettre à jour le profil**).
-  **Nothing was changed on the live site.** Everything was built and tested on a local copy of WordPress 7.1.3, the same version as the live site.
+- **WordPress admin (second site):** after the password was reset and the account was made an administrator, the site was deployed (see *Deployment log*). Everything was built and tested on a local copy of WordPress 7.1.3, the same version as the live site.
 
 ---
 
