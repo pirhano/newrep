@@ -83,7 +83,7 @@ function rh_install_page() {
 			<li><?php esc_html_e( 'Pages : Accueil, Nos soins (+ 9 pages de soins), Le cabinet, Prendre rendez-vous, Contact & accès, Conseils dentaires, Mentions légales & confidentialité ;', 'rhomija' ); ?></li>
 			<li><?php esc_html_e( '3 articles de conseils pour le référencement ;', 'rhomija' ); ?></li>
 			<li><?php esc_html_e( 'Menu principal et menu du pied de page ;', 'rhomija' ); ?></li>
-			<li><?php esc_html_e( 'Page d’accueil statique, page des articles, page de confidentialité, permaliens lisibles, fuseau horaire du Maroc ;', 'rhomija' ); ?></li>
+			<li><?php esc_html_e( 'Page d’accueil statique, page des articles, page de confidentialité, permaliens lisibles, fuseau horaire du Maroc, langue française ;', 'rhomija' ); ?></li>
 			<li><?php esc_html_e( 'Titre du site : « Cabinet Dentaire Dr Rhomija Nabil » et slogan.', 'rhomija' ); ?></li>
 		</ul>
 		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
@@ -255,6 +255,18 @@ function rh_install() {
 		update_option( 'permalink_structure', '/%postname%/' );
 	}
 	update_option( 'timezone_string', 'Africa/Casablanca' );
+	if ( 'fr_FR' !== get_option( 'WPLANG' ) ) {
+		if ( ! in_array( 'fr_FR', get_available_languages(), true ) ) {
+			require_once ABSPATH . 'wp-admin/includes/translation-install.php';
+			wp_download_language_pack( 'fr_FR' );
+		}
+		if ( in_array( 'fr_FR', get_available_languages(), true ) ) {
+			update_option( 'WPLANG', 'fr_FR' );
+			$report[] = __( 'Langue du site : français.', 'rhomija' );
+		} else {
+			$report[] = __( 'Impossible d’installer le français : choisissez « Français » dans Réglages → Général → Langue du site.', 'rhomija' );
+		}
+	}
 	$report[] = __( 'Réglages : page d’accueil, page des articles, confidentialité, titre du site, fuseau horaire Africa/Casablanca.', 'rhomija' );
 
 	rh_install_menus( $pages, $report );
@@ -271,16 +283,6 @@ function rh_install_menus( array $pages, array &$report ) {
 	if ( ! $primary ) {
 		$menu_id = wp_create_nav_menu( 'Menu principal' );
 		if ( ! is_wp_error( $menu_id ) ) {
-			wp_update_nav_menu_item(
-				$menu_id,
-				0,
-				array(
-					'menu-item-title'  => 'Accueil',
-					'menu-item-url'    => home_url( '/' ),
-					'menu-item-type'   => 'custom',
-					'menu-item-status' => 'publish',
-				)
-			);
 			$add_page = static function ( $page_id, $parent = 0, $title = '' ) use ( $menu_id ) {
 				return wp_update_nav_menu_item(
 					$menu_id,
@@ -295,6 +297,9 @@ function rh_install_menus( array $pages, array &$report ) {
 					)
 				);
 			};
+			if ( ! empty( $pages['accueil'] ) ) {
+				$add_page( $pages['accueil'], 0, 'Accueil' );
+			}
 			if ( ! empty( $pages['soins'] ) ) {
 				$soins_item = $add_page( $pages['soins'], 0, 'Soins' );
 				foreach ( get_pages( array( 'parent' => $pages['soins'], 'sort_column' => 'menu_order' ) ) as $child ) {

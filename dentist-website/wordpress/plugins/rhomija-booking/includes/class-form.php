@@ -143,7 +143,7 @@ class RB_Form {
 							<textarea id="<?php echo esc_attr( $uid ); ?>-message" name="message" rows="3" maxlength="1000" placeholder="<?php esc_attr_e( 'Ex. douleur depuis 2 jours en bas à droite…', 'rhomija-booking' ); ?>"></textarea>
 						</p>
 						<p class="rb-hp" aria-hidden="true">
-							<label for="<?php echo esc_attr( $uid ); ?>-website">Website</label>
+							<label for="<?php echo esc_attr( $uid ); ?>-website"><?php esc_html_e( 'Site web (ne pas remplir)', 'rhomija-booking' ); ?></label>
 							<input id="<?php echo esc_attr( $uid ); ?>-website" name="website" type="text" tabindex="-1" autocomplete="off">
 						</p>
 						<p class="rb-field rb-field--full rb-consent">
