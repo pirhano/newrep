@@ -174,7 +174,7 @@ class RB_Form {
 						<svg viewBox="0 0 24 24" width="34" height="34"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
 					</div>
 					<h3 class="rb-title" id="<?php echo esc_attr( $uid ); ?>-s4" tabindex="-1"><?php esc_html_e( 'Demande envoyée, merci !', 'rhomija-booking' ); ?></h3>
-					<p class="rb-done__lead"><?php esc_html_e( 'Notre équipe vous contacte rapidement par téléphone ou WhatsApp pour confirmer votre rendez-vous.', 'rhomija-booking' ); ?></p>
+					<p class="rb-done__lead"><?php esc_html_e( 'Le cabinet vous contacte rapidement par téléphone ou WhatsApp pour confirmer votre rendez-vous.', 'rhomija-booking' ); ?></p>
 					<div class="rb-summary" data-done-summary></div>
 					<div class="rb-actions rb-actions--center" data-done-actions></div>
 				</section>

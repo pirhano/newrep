@@ -12,6 +12,7 @@ from fontTools.ttLib import TTFont
 
 BLUE = "#1C6DB5"
 TEAL = "#1FA39A"
+TEAL_TEXT = "#0F766E"  # small tagline text: 5.5:1 on white
 INK = "#14212E"
 WHITE = "#FFFFFF"
 
@@ -89,7 +90,7 @@ def svg(w, h, body, title):
 def horizontal(f600, f700, dark_bg=False):
     ink = WHITE if dark_bg else INK
     blue = "#7DC3FF" if dark_bg else BLUE
-    teal = "#6FE0D3" if dark_bg else TEAL
+    teal = "#6FE0D3" if dark_bg else TEAL_TEXT
     h = 100.0
     m = mark(0, 0, h)
     tx = h + 22
@@ -122,7 +123,7 @@ def stacked(f600, f700):
     body = (
         mark(cx - d / 2, 0, d)
         + f'<path d="{a}" fill="{BLUE}"/><path d="{b}" fill="{INK}"/>'
-        + f'<path d="{l1}" fill="{TEAL}"/>'
+        + f'<path d="{l1}" fill="{TEAL_TEXT}"/>'
     )
     return svg(w, d + 80, body, "Cabinet Dentaire Dr. Rhomija Nabil")
 

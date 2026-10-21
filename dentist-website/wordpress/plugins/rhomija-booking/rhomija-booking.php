@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Rhomija — Prise de rendez-vous
- * Description:       Réservation de rendez-vous en ligne pour le Cabinet Dentaire Dr Rhomija Nabil : créneaux disponibles, demandes de RDV, confirmation par l'équipe, notifications e-mail et WhatsApp.
+ * Description:       Réservation de rendez-vous en ligne pour le Cabinet Dentaire Dr Rhomija Nabil : créneaux disponibles, demandes de RDV, confirmation par le cabinet, notifications e-mail et WhatsApp.
  * Version:           1.0.0
  * Requires at least: 6.4
  * Requires PHP:      7.4

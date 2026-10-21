@@ -8,11 +8,12 @@ A rebuild of the clinic's WordPress site (`lavender-chamois-170103.hostingersite
 | ![Home page](docs/apercu-accueil.jpg) | ![Mobile](docs/apercu-mobile.jpg) |
 
 The site is in French and runs on the existing WordPress install, so the clinic keeps its hosting, its plugins and its admin.
+There is **no team or staff section**: the only person named is Dr Rhomija Nabil, as part of the clinic's name, as on the wall sign.
 It consists of two pieces:
 
 | Folder | What it is |
 | --- | --- |
-| `wordpress/plugins/rhomija-booking/` | **Booking plugin.** Shows the clinic's free slots in real time. It records booking requests, emails the clinic and the patient, and gives the team a WordPress screen to confirm or cancel (by e-mail or WhatsApp). |
+| `wordpress/plugins/rhomija-booking/` | **Booking plugin.** Shows the clinic's free slots in real time. It records booking requests, emails the clinic and the patient, and gives the clinic a WordPress screen to confirm or cancel (by e-mail or WhatsApp). |
 | `wordpress/themes/rhomija/` | **Custom theme.** A fast, mobile-first theme with no page builder. It has a page per treatment for local SEO, the clinic's real photos, and a one-click installer that creates all the pages and menus. |
 | `brand/` | The new logo (SVG + PNG + favicons). |
 | `dist/` | **Ready-to-upload zips.** Rebuild them with `sh tools/build.sh`. |
@@ -38,6 +39,7 @@ Files in `brand/`:
 - `logo-mark.svg`: icon only
 - `png/`: PNG exports at several sizes
 
+The small "CABINET DENTAIRE" line uses a darker teal (`#0F766E`), so it stays readable at header size (5.5:1 on white). The emblem keeps the sign's teal.
 Text is converted to outlines, so the files render the same everywhere.
 To regenerate them, run `tools/build_logo.py` with the Montserrat SemiBold and Bold TTF files.
 
@@ -79,7 +81,7 @@ Treatment pages link to the form with that treatment already selected.
 
 ![Booking and e-mails](docs/apercu-reservation-emails.jpg)
 
-**For the clinic team** (WordPress → **Rendez-vous**):
+**For the clinic** (WordPress → **Rendez-vous**):
 - **Views:** *À venir*, *À confirmer* (also shown as a counter on the menu), *Aujourd'hui*, *Passés*, *Annulés*.
 - **One-click actions:** **Confirmer** · **Honoré** · **Annuler** · **WhatsApp** (opens WhatsApp with a pre-written confirmation).
 - **Confirmation e-mail:** confirming sends the patient an e-mail with a calendar invite (`.ics`), if they gave an address.
@@ -129,7 +131,11 @@ Treatment pages link to the form with that treatment already selected.
   - Self-hosted fonts.
   - WebP photos (about 330 KB for all five clinic photos at full size, about 125 KB for the mobile versions).
   - About 76 KB of HTML on the home page, with 2 scripts and 2 stylesheets.
-- **Accessibility:** skip link, keyboard-usable menus and booking calendar, ARIA state on slots, visible focus, and reduced-motion support.
+- **Accessibility:**
+  - **Text contrast meets WCAG AA (at least 4.5:1) everywhere.** This was checked with the axe-core tool on every page (desktop and mobile), every booking step, the mobile menu, the four e-mail types and the admin list.
+  - Text over gradients was checked by hand at its worst point.
+  - Skip link, keyboard-usable menus and booking calendar, ARIA state on slots, visible focus, and reduced-motion support.
+  - `color-scheme: light`, so phones in forced dark mode don't recolour the text.
 
 ---
 
@@ -146,7 +152,6 @@ I wrote the copy from the existing site, the clinic photos and a public director
   - Written quote before major treatment
   - Reimbursement paperwork (AMO / mutuelle)
   - Emergencies seen as quickly as possible
-- [ ] **Doctor bio** (page *Le cabinet*): add diplomas, years of practice and, ideally, a photo of the doctor.
 - [ ] **Exact Google Maps pin.** Paste the share link in Personnaliser. The embedded map currently uses an address search.
 - [ ] **CNDP.** Online booking processes health-related personal data. Check the clinic's CNDP declaration or authorisation under loi 09-08 and add its number to *Mentions légales & confidentialité*.
 - [ ] Delete WordPress's sample post *Bonjour tout le monde !* and sample page if they exist.

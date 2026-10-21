@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 class RB_Rest {
 
 	const NS         = 'rhomija-booking/v1';
-	const RATE_LIMIT = 5; // Successful requests per visitor per hour.
+	const RATE_LIMIT = 8; // Successful requests per visitor (IP + browser) per hour.
 
 	public static function init() {
 		add_action( 'rest_api_init', array( __CLASS__, 'routes' ) );
@@ -146,7 +146,9 @@ class RB_Rest {
 			$fwd = explode( ',', sanitize_text_field( wp_unslash( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) );
 			$ip  = trim( $fwd[0] );
 		}
-		return 'rb_rl_' . md5( $ip . wp_salt( 'nonce' ) );
+		// Mobile carriers share public IPs between many customers, so the browser is part of the key.
+		$ua = isset( $_SERVER['HTTP_USER_AGENT'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_USER_AGENT'] ) ) : '';
+		return 'rb_rl_' . md5( $ip . '|' . $ua . wp_salt( 'nonce' ) );
 	}
 
 	public static function book( WP_REST_Request $req ) {

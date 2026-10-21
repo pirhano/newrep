@@ -106,7 +106,7 @@ $rh_has_booking = shortcode_exists( 'rhomija_booking' );
 		<div class="split__content">
 			<p class="eyebrow"><?php esc_html_e( 'Le cabinet', 'rhomija' ); ?></p>
 			<h2 class="section-title"><?php esc_html_e( 'Un cabinet moderne, pensé pour votre confort et votre sécurité', 'rhomija' ); ?></h2>
-			<p><?php esc_html_e( 'Le Dr Rhomija Nabil vous reçoit dans un cabinet lumineux et entièrement équipé, au 3ᵉ étage de la Résidence Arrayhane. Ici, on prend le temps de vous écouter et de vous expliquer chaque étape.', 'rhomija' ); ?></p>
+			<p><?php esc_html_e( 'Le cabinet vous accueille dans un espace lumineux et entièrement équipé, au 3ᵉ étage de la Résidence Arrayhane. Ici, on prend le temps de vous écouter et de vous expliquer chaque étape.', 'rhomija' ); ?></p>
 			<ul class="feature-list">
 				<li><span><?php echo rh_icon( 'chair', 22 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span><div><strong><?php esc_html_e( 'Équipement moderne', 'rhomija' ); ?></strong><?php esc_html_e( 'Une salle de soins confortable et un matériel récent.', 'rhomija' ); ?></div></li>
 				<li><span><?php echo rh_icon( 'xray', 22 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span><div><strong><?php esc_html_e( 'Radiographie panoramique sur place', 'rhomija' ); ?></strong><?php esc_html_e( 'Un diagnostic complet sans vous déplacer ailleurs.', 'rhomija' ); ?></div></li>

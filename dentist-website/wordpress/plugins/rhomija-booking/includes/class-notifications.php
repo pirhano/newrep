@@ -79,17 +79,17 @@ class RB_Notifications {
 		foreach ( $buttons as $label => $url ) {
 			$btns .= '<a href="' . esc_url( $url ) . '" style="display:inline-block;margin:4px 8px 4px 0;padding:12px 18px;border-radius:999px;background:#1c6db5;color:#fff;text-decoration:none;font-weight:600">' . esc_html( $label ) . '</a>';
 		}
-		return '<!doctype html><html><body style="margin:0;background:#f3f6f9;font-family:Arial,Helvetica,sans-serif">'
+		return '<!doctype html><html><head><meta name="color-scheme" content="light only"><meta name="supported-color-schemes" content="light"></head><body style="margin:0;background:#f3f6f9;font-family:Arial,Helvetica,sans-serif">'
 			. '<div style="max-width:560px;margin:0 auto;padding:24px">'
 			. '<div style="background:#fff;border-radius:16px;padding:28px;border:1px solid #e3e9ef">'
-			. '<p style="margin:0 0 6px;color:#1fa39a;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700">' . esc_html( RB_Settings::get( 'clinic_name' ) ) . '</p>'
+			. '<p style="margin:0 0 6px;color:#0f766e;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700">' . esc_html( RB_Settings::get( 'clinic_name' ) ) . '</p>'
 			. '<h1 style="margin:0 0 14px;font-size:22px;color:#14212e">' . esc_html( $heading ) . '</h1>'
 			. '<p style="margin:0 0 18px;color:#3a4756;line-height:1.55">' . wp_kses_post( $intro ) . '</p>'
 			. '<table style="width:100%;border-collapse:collapse;background:#f7fafc;border-radius:12px">' . $table . '</table>'
 			. ( $btns ? '<p style="margin:20px 0 0">' . $btns . '</p>' : '' )
 			. ( $outro ? '<p style="margin:20px 0 0;color:#3a4756;line-height:1.55">' . wp_kses_post( $outro ) . '</p>' : '' )
 			. '</div>'
-			. '<p style="text-align:center;color:#8a95a1;font-size:12px;margin:16px 0 0">' . esc_html( self::address_line() ) . ' · ' . esc_html( RB_Settings::get( 'phone' ) ) . '</p>'
+			. '<p style="text-align:center;color:#5b6775;font-size:12px;margin:16px 0 0">' . esc_html( self::address_line() ) . ' · ' . esc_html( RB_Settings::get( 'phone' ) ) . '</p>'
 			. '</div></body></html>';
 	}
 
@@ -146,7 +146,7 @@ class RB_Notifications {
 					__( 'Demande bien reçue', 'rhomija-booking' ),
 					sprintf(
 						/* translators: %s: patient name */
-						__( 'Bonjour %s, merci pour votre demande. Notre équipe vous contacte rapidement pour confirmer votre rendez-vous.', 'rhomija-booking' ),
+						__( 'Bonjour %s, merci pour votre demande. Le cabinet vous contacte rapidement pour confirmer votre rendez-vous.', 'rhomija-booking' ),
 						esc_html( $a['name'] )
 					),
 					self::rows( $a ),

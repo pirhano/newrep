@@ -6,7 +6,7 @@
 .rb-badge--no_show { background: #f6e1e1; color: #8a2424; }
 .rb-badge--cancelled { background: #ececec; color: #6b6b6b; text-decoration: line-through; }
 .rb-today, .rb-new { display: inline-block; margin-left: 4px; padding: 0 7px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1c6db5; color: #fff; vertical-align: middle; }
-.rb-new { background: #1fa39a; }
+.rb-new { background: #0f766e; }
 .rb-msg { color: #646970; font-size: 12px; }
 .row-actions .rb-danger a, .row-actions a.rb-danger { color: #b32d2e; }
 .column-rb_when { width: 22%; }
@@ -17,8 +17,8 @@
 .rb-admin-grid input, .rb-admin-grid select, .rb-admin-grid textarea { width: 100%; max-width: none; }
 .rb-admin-full { grid-column: 1 / -1; }
 .rb-wide { width: 100%; text-align: center; }
-.button.rb-wa { background: #1fae5b; border-color: #1fae5b; }
-.button.rb-wa:hover, .button.rb-wa:focus { background: #178c49; border-color: #178c49; }
+.button.rb-wa { background: #15803d; border-color: #15803d; }
+.button.rb-wa:hover, .button.rb-wa:focus { background: #166534; border-color: #166534; }
 .rb-dash { margin: 0; }
 .rb-dash li { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; padding: 8px 0; border-bottom: 1px solid #f0f0f1; margin: 0; }
 .rb-dash li span:not(.rb-badge) { color: #646970; }

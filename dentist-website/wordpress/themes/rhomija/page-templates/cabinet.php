@@ -14,7 +14,7 @@ while ( have_posts() ) :
 	<section class="section section--tight">
 		<div class="container split split--top">
 			<figure class="photo-frame">
-				<?php echo rh_img( 'bureau', __( 'Bureau de consultation du Dr Rhomija Nabil', 'rhomija' ), '(min-width: 960px) 45vw, 100vw' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<?php echo rh_img( 'bureau', __( 'Bureau de consultation du cabinet', 'rhomija' ), '(min-width: 960px) 45vw, 100vw' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</figure>
 			<div class="entry-content">
 				<?php the_content(); ?>

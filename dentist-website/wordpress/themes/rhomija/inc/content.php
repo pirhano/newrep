@@ -70,8 +70,8 @@ function rh_default_pages() {
 			'slug'     => 'le-cabinet',
 			'template' => 'page-templates/cabinet.php',
 			'excerpt'  => 'Découvrez le cabinet dentaire du Dr Rhomija Nabil à Témara : un lieu moderne et chaleureux, une salle de stérilisation dédiée et une radiographie panoramique sur place.',
-			'content'  => '<h2>Le Dr Rhomija Nabil</h2>'
-				. '<p>Chirurgien-dentiste à Témara, le Dr Rhomija Nabil vous accueille dans un cabinet entièrement équipé, situé avenue Tarik Ibn Ziad, à deux pas du centre-ville.</p>'
+			'content'  => '<h2>Bienvenue au cabinet</h2>'
+				. '<p>Le cabinet se trouve au 3ᵉ étage de la Résidence Arrayhane, avenue Tarik Ibn Ziad, à Témara. Il dispose d’une salle de soins entièrement équipée, d’une salle de stérilisation dédiée et d’un appareil de radiographie panoramique.</p>'
 				. '<p>Notre approche est simple : prendre le temps d’écouter, d’examiner et d’expliquer. Avant chaque traitement, vous savez ce qui est prévu, pourquoi, et ce que cela coûtera.</p>'
 				. '<h2>Nos engagements</h2>'
 				. '<ul><li>Des explications claires et un devis détaillé avant tout traitement important ;</li><li>Une hygiène rigoureuse : les instruments sont nettoyés et stérilisés dans une salle dédiée ;</li><li>Des soins doux, adaptés aux patients anxieux comme aux enfants ;</li><li>Une réponse rapide en cas de douleur ou d’urgence.</li></ul>',
@@ -110,7 +110,7 @@ function rh_default_pages() {
 				. '<h2>Informations médicales</h2>'
 				. '<p>Les contenus de ce site sont fournis à titre d’information générale et ne remplacent pas une consultation. Pour tout problème de santé bucco-dentaire, prenez rendez-vous ou appelez le cabinet.</p>'
 				. '<h2>Protection des données personnelles</h2>'
-				. '<p>Les informations saisies dans le formulaire de prise de rendez-vous (nom, téléphone, e-mail facultatif, motif et message) sont utilisées uniquement pour organiser votre rendez-vous et vous recontacter. Elles sont réservées au personnel du cabinet et ne sont jamais vendues ni cédées à des tiers.</p>'
+				. '<p>Les informations saisies dans le formulaire de prise de rendez-vous (nom, téléphone, e-mail facultatif, motif et message) sont utilisées uniquement pour organiser votre rendez-vous et vous recontacter. Elles sont réservées au cabinet et ne sont jamais vendues ni cédées à des tiers.</p>'
 				. '<p>Conformément à la loi n° 09-08 relative à la protection des personnes physiques à l’égard du traitement des données à caractère personnel, vous disposez d’un droit d’accès, de rectification et d’opposition. Pour l’exercer, écrivez à {email} ou adressez-vous directement au cabinet.</p>'
 				. '<p>Les demandes de rendez-vous sont conservées pendant la durée nécessaire à la gestion de votre prise en charge.</p>'
 				. '<h2>Cookies et mesure d’audience</h2>'
@@ -329,7 +329,7 @@ function rh_faq() {
 		),
 		array(
 			__( 'Mon rendez-vous en ligne est-il confirmé tout de suite ?', 'rhomija' ),
-			__( 'Votre demande réserve le créneau choisi. Notre équipe vous contacte ensuite par téléphone ou WhatsApp pour le confirmer. Si vous indiquez votre e-mail, vous recevez aussi la confirmation par e-mail avec une invitation pour votre agenda.', 'rhomija' ),
+			__( 'Votre demande réserve le créneau choisi. Le cabinet vous contacte ensuite par téléphone ou WhatsApp pour le confirmer. Si vous indiquez votre e-mail, vous recevez aussi la confirmation par e-mail avec une invitation pour votre agenda.', 'rhomija' ),
 		),
 		array(
 			__( 'J’ai mal, est-ce que vous prenez les urgences ?', 'rhomija' ),

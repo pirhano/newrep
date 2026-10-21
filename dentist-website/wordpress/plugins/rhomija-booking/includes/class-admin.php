@@ -428,7 +428,7 @@ class RB_Admin {
 		}
 		wp_add_dashboard_widget( 'rb_upcoming', __( 'Prochains rendez-vous', 'rhomija-booking' ), array( __CLASS__, 'dashboard_widget' ) );
 
-		// The clinic team opens the dashboard for this: show it first.
+		// The clinic opens the dashboard for this: show it first.
 		global $wp_meta_boxes;
 		$normal = isset( $wp_meta_boxes['dashboard']['normal']['core'] ) ? $wp_meta_boxes['dashboard']['normal']['core'] : array();
 		if ( isset( $normal['rb_upcoming'] ) ) {
