@@ -117,6 +117,12 @@ Checked after the switch:
    - at the registrar, add the TXT record `v=spf1 include:_spf.mail.hostinger.com ~all` on `dentiste-rhomija.ma`, plus `_dmarc` → `v=DMARC1; p=none; rua=mailto:cabinetrhomija@gmail.com`.
 
    Then make one test booking and check the e-mail arrives in the inbox.
+
+   **Test on 22 October 2026, 17:00 UTC:**
+   - **What was done:** booking notifications were briefly redirected to the owner's own address (hichambagui@gmail.com), one labelled test booking was made, then the setting was restored and the test appointment deleted.
+   - **Result:** **neither e-mail arrived**, in the inbox or in Spam, after more than 5 minutes.
+   - **What this means:** until the step above is done, the clinic will **not** receive booking e-mails.
+   - **Meanwhile:** requests are still recorded and visible in WordPress → **Rendez-vous**, with a counter on the menu and a dashboard widget, so check that screen daily.
 2. **Google Site Kit** is not connected yet: WordPress → Site Kit → *Se connecter avec Google*, for Analytics and Search Console on `https://dentiste-rhomija.ma`.
 3. **Google Search Console:** submit `https://dentiste-rhomija.ma/sitemap.xml`.
 
